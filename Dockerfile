@@ -26,7 +26,7 @@ ARG PORT
 # ARG EMAIL_FROM_USER_NAME
 # ARG SECRET_KEY
 
-CMD ["node", "dist/main"]
+CMD ["node", "dist/src/main"]
 EXPOSE ${PORT}
 
 
