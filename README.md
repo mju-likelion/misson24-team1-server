@@ -27,7 +27,7 @@ LAUNCH_ENV=docker-compose         // docker-compose를 사용할 경우
 
 ## Pre-installation
 
-DB, Cache 선행 설치가 필요합니다
+DB 선행 설치가 필요합니다
 
 ```
 MySQL
