@@ -1,4 +1,4 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 
 import { SubwayService } from './subway.service';
 
@@ -11,7 +11,7 @@ export class SubwayController {
     return this.subwayService.test();
   }
 
-  @Get('/')
+  @Post('/')
   async subway(@Body() departure) {
     return this.subwayService.subway(departure);
   }
