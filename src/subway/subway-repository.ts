@@ -6,13 +6,15 @@ import { Subway } from './subway.entity';
 
 @EntityRepository(Subway)
 export class SubwayRepository extends Repository<Subway> {
-  async createData() {
-    readFile('../testing.json', 'utf8', (error, jsonFile) => {
-      if (error) return console.error(error);
+  async test() {
+    readFile('src/subway/testing.json', 'utf8', (error, jsonFile) => {
+      if (error) return console.log(error);
 
       const jsonData = JSON.parse(jsonFile);
-      jsonData.forEach(element => {
-        console.log(element);
+      jsonData.forEach(async element => {
+        const a = this.create(element);
+        console.log(a);
+        await this.save(a);
       });
     });
   }

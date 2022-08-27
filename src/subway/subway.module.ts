@@ -9,5 +9,6 @@ import { SubwayService } from './subway.service';
   imports: [TypeOrmModule.forFeature([SubwayRepository])],
   controllers: [SubwayController],
   providers: [SubwayService],
+  exports: [SubwayService],
 })
 export class SubwayModule {}
