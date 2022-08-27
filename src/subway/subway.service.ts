@@ -15,6 +15,7 @@ export class SubwayService {
   }
 
   async subway(departure) {
+    console.log('departure:', departure);
     const datas = await this.subwayRepository
       .createQueryBuilder('subway')
       .where('subway.station_nm = (:departure)', { departure: departure.departure })
@@ -26,7 +27,7 @@ export class SubwayService {
     //   take: 0,
     //   skip: 2,
     // });
-    console.log(datas);
+    console.log('datas:', datas);
     if (!datas) {
       throw new HttpException({ error: { message: '데이터가 없습니다' } }, 404);
     }
