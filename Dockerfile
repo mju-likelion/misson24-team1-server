@@ -5,6 +5,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn --prod
 RUN yarn global add @nestjs/cli
+RUN yarn add @types/node
 
 COPY . .
 RUN yarn build
